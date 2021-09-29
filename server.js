@@ -16,6 +16,14 @@ app.get('/users', (req, res) => {
     });
 });
 
+app.get('/users/:username', (req, res) => {
+    res.json({
+        success: true,
+        message: 'Got one user.',
+        user: req.params.username,
+    });
+});
+
 app.listen(8000, () => {
     console.log("Server is running...")
 });
